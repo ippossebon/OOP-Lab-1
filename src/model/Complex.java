@@ -70,9 +70,10 @@ public class Complex {
         this.imaginary = (this.real * temp.imaginary) + (this.imaginary * temp.real);
     }
 
-    public double squareComplex()
+    public void squareComplex()
     {
-        return (this.real * this.real) + (2 *(this.real * this.imaginary)) + (this.imaginary * this.imaginary);
+    	this.real = (this.real * this.real) - (this.imaginary * this.imaginary);
+    	this.imaginary = (this.real * this.imaginary) + (this.imaginary * this.real);
     }
 
     public double normComplex()
@@ -81,10 +82,8 @@ public class Complex {
     }
 
     public static void main(String args[])
-    {
-        Complex c = new Complex(5,5);
-        Complex y = new Complex(4,1);
-        Complex z = new Complex(5,-1);
-
+    {        
+       	Mandelbrot temporary = new Mandelbrot();
+        FractalWindow window = new FractalWindow(temporary);
     }
 }
