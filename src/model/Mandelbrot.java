@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Color;
+import static java.lang.Math.*;
 
 /**
  * Created by Fernando on 4/22/15.
@@ -30,9 +31,15 @@ public class Mandelbrot {
     public Color colorAt(double x, double y)
     {
     	Complex aux = new Complex(x,y);
-    	int repetitions = repetitions(aux,50);
+    	double repetitions = repetitions(aux,50);
     	repetitions = repetitions % 255;
-    	Color finalcolor = new Color(repetitions, repetitions, repetitions);
+    	double q = repetitions / 50;
+    	double r = 255 * (Math.max(Math.min((3 * q)- 1,3 - (3 * q )),0));
+    	double g = 255 * (Math.max(Math.min((3 * q),2 - (3 * q )),0));
+    	double b = 255 * (Math.max(1 - (3 * q),0));
+    	
+    	//Color finalcolor = new Color(repetitions, repetitions, repetitions);
+    	Color finalcolor = new Color((int)r,(int)g,(int)b);
     	
     	return finalcolor;
     }

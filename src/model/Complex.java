@@ -62,18 +62,24 @@ public class Complex {
     public void mulReal(double value)
     {
         this.real *= value;
+        this.imaginary *= value;
     }
 
     public void mulComplex(Complex temp)
     {
-        this.real = (this.real * temp.real) - (this.imaginary * temp.imaginary);
-        this.imaginary = (this.real * temp.imaginary) + (this.imaginary * temp.real);
+        double r = (this.real * temp.getReal()) - (this.imaginary * temp.getImaginary());
+        double i = (this.real * temp.getImaginary()) + (this.imaginary * temp.getReal());
+        this.real = r;
+        this.imaginary = i;
     }
 
     public void squareComplex()
     {
-    	this.real = (this.real * this.real) - (this.imaginary * this.imaginary);
-    	this.imaginary = (this.real * this.imaginary) + (this.imaginary * this.real);
+    	double r = (this.real * this.real) - (this.imaginary * this.imaginary);
+    	double i = (this.real * this.imaginary) + (this.imaginary * this.real);
+    	
+    	this.real = r;
+    	this.imaginary = i;
     }
 
     public double normComplex()
@@ -82,7 +88,7 @@ public class Complex {
     }
 
     public static void main(String args[])
-    {        
+    {     
        	Mandelbrot temporary = new Mandelbrot();
         FractalWindow window = new FractalWindow(temporary);
     }
