@@ -86,10 +86,4 @@ public class Complex {
     {
         return Math.sqrt((this.real * this.real) + (this.imaginary * this.imaginary));
     }
-
-    public static void main(String args[])
-    {     
-       	Mandelbrot temporary = new Mandelbrot();
-        FractalWindow window = new FractalWindow(temporary);
-    }
 }

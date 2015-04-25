@@ -38,7 +38,6 @@ public class Mandelbrot {
     	double g = 255 * (Math.max(Math.min((3 * q),2 - (3 * q )),0));
     	double b = 255 * (Math.max(1 - (3 * q),0));
     	
-    	//Color finalcolor = new Color(repetitions, repetitions, repetitions);
     	Color finalcolor = new Color((int)r,(int)g,(int)b);
     	
     	return finalcolor;

@@ -1,6 +1,7 @@
 package model;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.image.*;
 
@@ -65,4 +66,10 @@ public class FractalWindow extends JFrame {
 			g.drawImage(image, 0, 0, null);
 		}
 	}
+	
+	 public static void main(String args[])
+	    {     
+	       	Mandelbrot mandelbrot = new Mandelbrot();
+	        FractalWindow window = new FractalWindow(mandelbrot);
+	    }
 }
